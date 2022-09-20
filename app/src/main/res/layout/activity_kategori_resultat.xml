@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_height="match_parent"
+    tools:context="no.kasperi.Ui.Kategorier.KategoriResultatActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.8"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/filter_skjerm_header"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/filter_skjerm_header"
+            style="@style/h2_tittel_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_10"
+            android:text="@string/oppskrift_resultat_for"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/kategori_resultat_subtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/filter_skjerm_header"
+            app:layout_constraintTop_toTopOf="@+id/filter_skjerm_header"
+            app:layout_constraintBottom_toBottomOf="@id/filter_skjerm_header"
+            tools:text="@string/kalori_range_min_max_verdi" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kategori_resultat_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filter_skjerm_header"
+            app:spanCount="2"
+            tools:listitem="@layout/holder_oppskrift_element_rad"/>
+
+        <ProgressBar
+            android:id="@+id/kategori_resultat_lasting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

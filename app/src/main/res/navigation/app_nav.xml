@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav">
+    app:startDestination="@id/nav_hjemskjerm">
+
+    <fragment
+        android:id="@+id/nav_hjemskjerm"
+        android:name="com.stathis.food4u.ui.dashboard.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main"  />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.stathis.food4u.ui.dashboard.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_profil"
+        android:name="com.stathis.food4u.ui.dashboard.profile.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+
+    <fragment
+        android:id="@+id/nav_filter"
+        android:name="com.stathis.food4u.ui.dashboard.filters.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+
+    <fragment
+        android:id="@+id/nav_kategorier"
+        android:name="com.stathis.food4u.ui.dashboard.categories.KategoriFragment"
+        android:label="fragment_kategorier"
+        tools:layout="@layout/fragment_kategorier" />
+</navigation>

@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "762024188098",
+    "firebase_url": "https://food4u-a5079-default-rtdb.firebaseio.com",
+    "project_id": "food4u-a5079",
+    "storage_bucket": "food4u-a5079.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762024188098:android:12551f1baff2d34b25435b",
+        "android_client_info": {
+          "package_name": "no.kasperi.food4u"
+        },
+
+      },
+      "oauth_client": [
+        {
+          "client_id": "762024188098-p5se2tdf5ifumqc9vdedmktn75iaj3nc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAodoBenazhFGg-1l5IW6oQUI_Id2A-Cco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762024188098-p5se2tdf5ifumqc9vdedmktn75iaj3nc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="no.kasperi.Ui.Detaljer.DetaljerActivity">
+
+    <ImageView
+        android:id="@+id/oppskrift_kort_bakgrunn"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/se_oppskrift_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@color/seed" />
+
+    <View
+        android:id="@+id/oppskrift_kort"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/runde_corners"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/liker_knapp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/svart_sirkel"
+        android:backgroundTint="@color/md_theme_dark_inversePrimary"
+        android:padding="10dp"
+        android:src="@drawable/tommel_opp"
+        app:layout_constraintEnd_toEndOf="@+id/dele_knapp"
+        app:layout_constraintTop_toBottomOf="@+id/dele_knapp" />
+
+    <ImageView
+        android:id="@+id/dele_knapp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/svart_sirkel"
+        android:padding="10dp"
+        android:src="@drawable/dele_knapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/oppskrift_tittel"
+        style="@style/h2_tittel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oppskrift_kort"
+        tools:text="Kyllingsuppe" />
+
+    <ImageView
+        android:id="@+id/varighet_klokke"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ikon_klokke"
+        app:layout_constraintStart_toStartOf="@id/oppskrift_tittel"
+        app:layout_constraintTop_toBottomOf="@id/oppskrift_tittel" />
+
+    <TextView
+        android:id="@+id/varighet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="5dp"
+        android:textColor="@color/md_theme_dark_onSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/varighet_klokke"
+        app:layout_constraintStart_toEndOf="@id/varighet_klokke"
+        app:layout_constraintTop_toTopOf="@+id/varighet_klokke"
+        tools:text="Varighet: 1 time og 20 minutter" />
+
+    <ImageView
+        android:id="@+id/kalorier"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/svart_sirkel"
+        android:backgroundTint="@color/md_theme_dark_onSecondary"
+        app:layout_constraintEnd_toStartOf="@id/protein"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/varighet" />
+
+    <TextView
+        android:id="@+id/kalorier_mengde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/kalorier"
+        app:layout_constraintStart_toStartOf="@id/kalorier"
+        app:layout_constraintTop_toTopOf="@id/kalorier"
+        tools:text="1000" />
+
+    <TextView
+        android:id="@+id/kalorier_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="kcal"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/kalorier_mengde"
+        app:layout_constraintStart_toStartOf="@id/kalorier_mengde"
+        app:layout_constraintTop_toBottomOf="@id/kalorier_mengde" />
+
+    <ImageView
+        android:id="@+id/protein"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/svart_sirkel"
+        android:backgroundTint="@color/md_theme_dark_error"
+        app:layout_constraintEnd_toStartOf="@+id/karbohydrater"
+        app:layout_constraintStart_toEndOf="@id/kalorier"
+        app:layout_constraintTop_toTopOf="@id/kalorier" />
+
+    <TextView
+        android:id="@+id/protein_mengde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="12g"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/protein"
+        app:layout_constraintStart_toStartOf="@id/protein"
+        app:layout_constraintTop_toTopOf="@id/protein" />
+
+    <TextView
+        android:id="@+id/protein_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Protein"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/protein"
+        app:layout_constraintStart_toStartOf="@id/protein"
+        app:layout_constraintTop_toBottomOf="@id/protein" />
+
+    <ImageView
+        android:id="@+id/karbohydrater"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/svart_sirkel"
+        android:backgroundTint="@color/md_theme_light_onTertiaryContainer"
+        app:layout_constraintEnd_toStartOf="@id/fett"
+        app:layout_constraintStart_toEndOf="@id/protein"
+        app:layout_constraintTop_toTopOf="@id/kalorier" />
+
+    <TextView
+        android:id="@+id/karbohydrat_mengde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/karbohydrater"
+        app:layout_constraintStart_toStartOf="@id/karbohydrater"
+        app:layout_constraintTop_toTopOf="@id/karbohydrater"
+        tools:text="12g" />
+
+    <TextView
+        android:id="@+id/karbohydrater_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/carbs"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/karbohydrat_mengde"
+        app:layout_constraintStart_toStartOf="@id/karbohydrat_mengde"
+        app:layout_constraintTop_toBottomOf="@id/karbohydrat_mengde" />
+
+    <ImageView
+        android:id="@+id/fett"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/svart_sirkel"
+        android:backgroundTint="@color/md_theme_light_tertiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/karbohydrater"
+        app:layout_constraintTop_toTopOf="@id/kalorier" />
+
+    <TextView
+        android:id="@+id/fett_mengde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/fett"
+        app:layout_constraintStart_toStartOf="@id/fett"
+        app:layout_constraintTop_toTopOf="@id/fett"
+        tools:text="12g" />
+
+    <TextView
+        android:id="@+id/fett_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Fett"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/fett_mengde"
+        app:layout_constraintStart_toStartOf="@id/fett_mengde"
+        app:layout_constraintTop_toBottomOf="@id/fett_mengde" />
+
+    <TextView
+        android:id="@+id/tittel_ingredienser"
+        style="@style/h3_tittel_bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_10"
+        android:text="Ingredienser"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kalorier" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredienser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@+id/fett"
+        app:layout_constraintStart_toStartOf="@id/tittel_ingredienser"
+        app:layout_constraintTop_toBottomOf="@id/tittel_ingredienser" />
+
+    <Button
+        android:id="@+id/se_oppskrift_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/md_theme_dark_onError"
+        android:text="Se oppskrift"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fett"
+        app:layout_constraintStart_toStartOf="@id/kalorier" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

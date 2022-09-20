@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Food4U</string>
+    <string name="txtSlagord">Du ringer, vi bringer</string>
+    <string name="telefon_nummer">Telefonnummer</string>
+    <string name="navn">Navn</string>
+    <string name="passord">Passord</string>
+    <string name="logg_inn">Logg inn</string>
+    <string name="passord_hint">Passord</string>
+    <string name="registrer_text">Ny hos Food4U? <b>Registrer deg her!</b></string>
+    <string name="registrer_deg">Registrer deg</string>
+    <string name="logget_inn_som">Du er logget inn som</string>
+    <string name="email">Email</string>
+    <string name="har_bruker">Har du bruker? <b>Logg inn her</b></string>
+</resources>
