@@ -2,7 +2,7 @@ package no.kasperi.Listeners
 
 import android.view.View
 
-interface ItemClickListener {
+interface ElementClickListener {
 
     fun onItemClick(view: View)
 }

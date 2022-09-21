@@ -2,10 +2,10 @@ package no.kasperi.Abstraction
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import no.kasperi.Listeners.ItemClickListener
+import no.kasperi.Listeners.ElementClickListener
 import no.kasperi.Models.LocalModel
 
-abstract class AbstractViewHolder(itemView: View, callback: ItemClickListener? = null) :
+abstract class AbstractViewHolder(itemView: View, callback: ElementClickListener? = null) :
     RecyclerView.ViewHolder(itemView) {
 
     init {

@@ -24,22 +24,21 @@
             style="@style/h2_tittel_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/padding_10"
-            android:text="@string/oppskrift_resultat_for"
-            android:textColor="@color/yellow"
+            android:text="Oppskrifter med: "
+            android:textColor="@color/seed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/kategori_resultat_subtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/filter_skjerm_header"
             app:layout_constraintStart_toEndOf="@id/filter_skjerm_header"
             app:layout_constraintTop_toTopOf="@+id/filter_skjerm_header"
-            app:layout_constraintBottom_toBottomOf="@id/filter_skjerm_header"
             tools:text="@string/kalori_range_min_max_verdi" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/kategori_resultat_recycler"
@@ -49,8 +48,10 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filter_skjerm_header"
+            app:layout_constraintVertical_bias="0.0"
             app:spanCount="2"
-            tools:listitem="@layout/holder_oppskrift_element_rad"/>
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/holder_oppskrift_element_rad" />
 
         <ProgressBar
             android:id="@+id/kategori_resultat_lasting"
