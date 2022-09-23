@@ -17,6 +17,7 @@
     <string name="kalori_range_min_max_verdi">Kaloriområde: fra 35 opptil 200 kcal</string>
 
     <!-- Filter Skjerm -->
+    <string name="fyll_alle_felt">Vennligst fyll inn alle felt</string>
 
     <string name="kategorier">Kategorier</string>
     <string name="title_activity_logg_inn">LoggInnActivity</string>

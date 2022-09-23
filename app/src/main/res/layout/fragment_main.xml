@@ -1,6 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/swipe_oppdater_layout"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_dark_onBackground"
+    tools:context="no.kasperi.Ui.DashBoard.Main.MainFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/bakgrunn_hjemskjerm"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/morkere_bakgrunnsbilde"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:alpha="0.5"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hoved_skjerm_header"
+            style="@style/h2_tittel_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="God morgen"
+            android:textColor="@color/md_theme_dark_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hjem_header_brukernavn"
+            style="@style/h2_tittel_bold_white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/hoved_skjerm_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/hoved_skjerm_header"
+            tools:text="Kasper" />
+
+        <TextView
+            android:id="@+id/hoved_subheader"
+            android:layout_width="0dp"
+            style="@style/h3_tittel_bold"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Hva vil du lage idag?"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hoved_skjerm_header" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kategorier_recycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/holder_kategorier_element_rad"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hoved_subheader"
+            tools:itemCount="9" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/hoved_skjerm_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingStart="80dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="80dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/morkere_bakgrunnsbilde"
+            tools:itemCount="9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

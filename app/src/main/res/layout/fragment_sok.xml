@@ -1,0 +1,34 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_dark_onBackground"
+    tools:context="no.kasperi.Ui.DashBoard.Søk.SokFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sok_sokebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/runde_corners"
+        android:focusable="true"
+        app:iconifiedByDefault="false"
+        app:layout_constraintCircleRadius="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Søk etter oppskrift"
+        app:searchIcon="@drawable/search_dark" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sok_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sok_sokebar"
+        tools:itemCount="6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/kategorier_bilde"
-        tools:text="Oppskriftstittel" />
+        tools:text="Kategoritittel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

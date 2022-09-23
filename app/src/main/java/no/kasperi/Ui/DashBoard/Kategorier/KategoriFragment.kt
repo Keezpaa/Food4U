@@ -10,6 +10,7 @@ import no.kasperi.Models.ForslagsElement
 import no.kasperi.Models.HjemKategoriElement
 import no.kasperi.Ui.Kategorier.KategoriResultatActivity
 import no.kasperi.food4u.R
+import kotlinx.android.synthetic.main.fragment_kategori.*
 
 class KategoriFragment : AbstractFragment(R.layout.fragment_kategori) {
 
