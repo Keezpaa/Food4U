@@ -5,6 +5,6 @@ import no.kasperi.Models.HjemKategoriElement
 
 interface ForslagsElementClickListener {
 
-    fun onKategoriClick(category : ForslagsElement)
-    fun onHjemKategoriClick(category : HjemKategoriElement)
+    fun onKategoriClick(kategori : ForslagsElement)
+    fun onHjemKategoriClick(kategori : HjemKategoriElement)
 }
