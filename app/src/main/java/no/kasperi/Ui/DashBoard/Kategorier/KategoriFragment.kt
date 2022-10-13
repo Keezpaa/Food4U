@@ -23,16 +23,16 @@ class KategoriFragment : AbstractFragment(R.layout.fragment_kategori) {
     override fun running() {
         viewModel.initKategorier()
 
-        kategori_skjerm_recycler.adapter = viewModel.adapter
+        kategorier_skjerm_recycler.adapter = viewModel.adapter
 
         viewModel.observeData(this, object : ForslagsElementClickListener {
-            override fun onKategoriClick(category: ForslagsElement) {
+            override fun onKategoriClick(kategori: ForslagsElement) {
                 startActivity(
                     Intent(context, KategoriResultatActivity::class.java)
                     .putExtra("KATEGORI",kategori.kategoriNavn))
             }
 
-            override fun onHjemKategoriClick(category: HjemKategoriElement) {
+            override fun onHjemKategoriClick(kategori: HjemKategoriElement) {
                 // Not a home category
             }
         })

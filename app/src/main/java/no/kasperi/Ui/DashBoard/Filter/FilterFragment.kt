@@ -20,14 +20,14 @@ class FilterFragment : AbstractFragment(R.layout.fragment_filter) {
     override fun running() {
         kalorier_slider.setValues(300.0f, 2700.0f)
 
-        val matTypeValg = resources.getStringArray(R.array.mat_type_valg)
-        val matTypeAdapter =
-            ArrayAdapter(requireContext(), R.layout.dropdown_element, matTypeValg)
-        mat_type_autocomplete.setAdapter(matTypeAdapter)
+       // val matTypeValg = resources.getStringArray(R.array.mat_type_valg)
+    //    val matTypeAdapter =
+   //         ArrayAdapter(requireContext(), R.layout.dropdown_element, matTypeValg)
+    //    mat_type_autocomplete.setAdapter(matTypeAdapter)
 
-        val diettTypeValg = resources.getStringArray(R.array.diett_type_valg)
-        val diettTypeAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_element, diettTypeValg)
-        diet_autocomplete.setAdapter(diettTypeAdapter)
+    //    val diettTypeValg = resources.getStringArray(R.array.diett_type_valg)
+   //     val diettTypeAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_element, diettTypeValg)
+     //   diet_autocomplete.setAdapter(diettTypeAdapter)
 
         finn_oppskrift_btn.setOnClickListener {
             when (viewModel.checkIfValid(

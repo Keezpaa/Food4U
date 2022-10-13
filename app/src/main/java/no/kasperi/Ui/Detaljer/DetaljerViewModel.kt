@@ -2,6 +2,7 @@ package no.kasperi.Ui.Detaljer
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import no.kasperi.Adapters.OppskriftIngredienserAdapter
 import no.kasperi.Models.OppskriftMain
 
 class DetaljerViewModel : ViewModel() {

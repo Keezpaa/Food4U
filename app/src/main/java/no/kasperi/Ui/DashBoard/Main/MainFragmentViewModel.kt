@@ -1,7 +1,9 @@
 package no.kasperi.Ui.DashBoard.Main
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -34,17 +36,20 @@ class MainFragmentViewModel : ViewModel(), ElementClickListener {
         adapter.submitList(listOf(ShimmerModel(), ShimmerModel(), ShimmerModel()))
     }
 
-    fun observeData(owner: LifecycleOwner, categoryCallback: ForslagsElementClickListener) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun observeData(owner: LifecycleOwner, kategoriCallback: ForslagsElementClickListener) {
         this.kategoriCallback = kategoriCallback
 
         oppskrifter.observe(owner, Observer {
             Log.d("data is", "data is $it")
 
-            adapter.submitList(it.hits)
+            if (it != null) {
+                adapter.submitList(it.hits)
+            }
             adapter.notifyDataSetChanged()
         })
 
-        oppskrifter.observe(owner, Observer {
+        kategorier.observe(owner, Observer {
             Log.d("home categories", "home categories : $it")
             kategoriAdapter.submitList(it)
         })

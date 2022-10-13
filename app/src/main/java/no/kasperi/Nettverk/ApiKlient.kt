@@ -8,16 +8,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiKlient {
 
         private val BASE_URL = "https://api.edamam.com/"
-        private val api: Food4UApi
+        private val api: Food4UApi = Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(Food4UApi::class.java)
 
-        init {
-            api = Retrofit.Builder().baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(Food4UApi::class.java)
-        }
-
-        fun getRecipes(recipe: String, app_id: String, app_key: String): Call<ResponsModel> {
+    fun getRecipes(recipe: String, app_id: String, app_key: String): Call<ResponsModel> {
             return api.getRecipes(recipe, app_id, app_key)
         }
 

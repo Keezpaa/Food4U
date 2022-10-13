@@ -9,8 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.fragment_sok.*
 import no.kasperi.Abstraction.AbstractFragment
+import no.kasperi.Listeners.OppskriftClickListener
+import no.kasperi.Listeners.QueryClickListener
 import no.kasperi.Models.OppskriftMain
+import no.kasperi.Models.QueryModel
+import no.kasperi.Ui.Detaljer.DetaljerActivity
 import no.kasperi.food4u.R
 
 class SokFragment : AbstractFragment(R.layout.fragment_sok) {
@@ -49,9 +54,9 @@ class SokFragment : AbstractFragment(R.layout.fragment_sok) {
 
         sok_recycler.adapter = viewModel.adapter
 
-        viewModel.observeData(this,object : QueryClickListener{
+        viewModel.observeData(this,object : QueryClickListener {
             override fun onQueryClick(query: QueryModel) {
-                callApiForResuls(query.queryName)
+                callApiForResuls(query.queryNavn)
             }
         })
     }
@@ -61,10 +66,10 @@ class SokFragment : AbstractFragment(R.layout.fragment_sok) {
     }
 
     private fun callApiForResuls(query : String){
-        viewModel.getDataFromRepository(query, object : RecipeClickListener {
-            override fun onRecipeClick(recipe: OppskriftMain) {
-                startActivity( Intent(requireContext(), DetailjerActivity::class.java)
-                    .putExtra("OPPSKRIFT", recipe))
+        viewModel.getDataFromRepository(query, object : OppskriftClickListener {
+            override fun onOppskriftClick(oppskrift: OppskriftMain) {
+                startActivity( Intent(requireContext(), DetaljerActivity::class.java)
+                    .putExtra("OPPSKRIFT", oppskrift))
             }
         })
 
@@ -72,9 +77,10 @@ class SokFragment : AbstractFragment(R.layout.fragment_sok) {
     }
 
     fun observeDataPaging(query : String){
-        search_recycler.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if (!search_recycler.canScrollVertically(1)) {
+        sok_recycler.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            if (!sok_recycler.canScrollVertically(1)) {
                 viewModel.loadMoreRecipes(query)
             }
         }
     }
+}

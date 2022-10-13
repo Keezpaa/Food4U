@@ -2,6 +2,7 @@ package no.kasperi.Adapters
 
 import android.view.View
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.holder_detaljer_oppskrift_element_rad.view.*
 import no.kasperi.Abstraction.AbstractViewHolder
 import no.kasperi.Models.IngrediensModel
 import no.kasperi.Models.LocalModel

@@ -11,7 +11,7 @@ class OppskriftIngredienserAdapter() :
     ListAdapter<LocalModel, OppskriftIngredienserViewHolder>(DiffUtilClass<LocalModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OppskriftIngredienserViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout., parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_detaljer_oppskrift_element_rad, parent, false)
         return OppskriftIngredienserViewHolder(view)
     }
 

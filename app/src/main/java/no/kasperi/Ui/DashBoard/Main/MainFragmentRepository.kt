@@ -1,11 +1,13 @@
 package no.kasperi.Ui.DashBoard.Main
 
+import android.provider.UserDictionary.Words.APP_ID
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import no.kasperi.APP_KEY
 import no.kasperi.Models.HjemKategoriElement
 import no.kasperi.Models.ResponsModel
 import no.kasperi.Nettverk.ApiKlient
@@ -17,8 +19,8 @@ import retrofit2.Response
 class MainFragmentRepository {
 
     val databaseReference by lazy { FirebaseDatabase.getInstance().reference }
-    val oppskrifter = MutableLiveData<ResponsModel>()
-    val brukernavn = MutableLiveData<String>()
+    val oppskrifter = MutableLiveData<ResponsModel?>()
+    val brukernavn = MutableLiveData<String?>()
     val hjemKategorier = MutableLiveData<List<HjemKategoriElement>>()
 
     fun getUsername() {
