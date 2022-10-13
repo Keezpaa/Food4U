@@ -9,8 +9,20 @@
         android:icon="@mipmap/food4u_app_logo_round"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-
-        <!-- Splash skjerm -->
+        <activity android:name="no.kasperi.Ui.glemtPassord.GlemtPassordActivity" /> <!--  -->
+        <activity android:name="no.kasperi.Ui.redigerProfil.RedigerProfilActivity" /> <!-- Rediger profil -->
+        <activity android:name="no.kasperi.Ui.Kategorier.KategoriResultatActivity" /> <!-- Kategori resultat -->
+        <activity android:name="no.kasperi.Ui.Resultater.FilterResultatActivity" /> <!-- Filter resultat -->
+        <activity android:name="no.kasperi.Ui.webView.WebViewActivity" /> <!-- WebView - se oppskriftene på internett -->
+        <activity android:name="no.kasperi.Ui.DashBoard.DashBoardActivity"
+            android:windowSoftInputMode="adjustPan"/> <!-- Dashboard -->
+        <activity android:name="no.kasperi.Ui.Detaljer.DetaljerActivity" /> <!-- Detaljer -->
+        <activity android:name="no.kasperi.Ui.Registrer.RegistrerActivity" /> <!-- Registrer ny bruker -->
+        <activity
+            android:name="no.kasperi.Ui.loggInn.LoggInnActivity"
+            android:windowSoftInputMode="adjustResize"/> <!-- Logg inn -->
+        <activity android:name="no.kasperi.Ui.Intro.IntroActivity" /> <!-- Intro - Logg inn eller Registrer ny bruker -->
+        <activity android:name="no.kasperi.Ui.komIGang.KomIGangActivity" /> <!-- Kom i gang -->
         <activity
             android:name="no.kasperi.Ui.Splash.SplashActivity"
             android:exported="true">
@@ -20,17 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="no.kasperi.Ui.Intro.IntroActivity" /> <!-- Intro - Logg inn eller Registrer ny bruker -->
-        <activity android:name="no.kasperi.Ui.komIGang.KomIGangActivity" /> <!-- Kom i gang -->
-        <activity android:name="no.kasperi.Ui.loggInn.LoggInnActivity" /> <!-- Logg inn -->
-        <activity android:name="no.kasperi.Ui.glemtPassord.GlemtPassordActivity" /> <!--  -->
-        <activity android:name="no.kasperi.Ui.Registrer.RegistrerActivity" /> <!-- Registrer ny bruker -->
-        <activity android:name="no.kasperi.Ui.DashBoard.DashBoardActivity" /> <!-- Dashboard -->
-        <activity android:name="no.kasperi.Ui.Kategorier.KategoriResultatActivity" /> <!-- Kategori resultat -->
-        <activity android:name="no.kasperi.Ui.Detaljer.DetaljerActivity" /> <!-- Detaljer -->
-        <activity android:name="no.kasperi.Ui.redigerProfil.RedigerProfilActivity" /> <!-- Rediger profil -->
-        <activity android:name="no.kasperi.Ui.Resultater.FilterResultatActivity" /> <!-- Filter resultat -->
-        <activity android:name="no.kasperi.Ui.webView.WebViewActivity" /> <!-- WebView - se oppskriftene på internett -->
+
         <service
             android:name="no.kasperi.Varsler.FirebasePushService"
             android:exported="false">

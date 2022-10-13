@@ -3,21 +3,22 @@ package no.kasperi.Ui.Splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import androidx.core.content.ContextCompat.startActivity
-import no.kasperi.Abstraction.AbstractActivity
-import no.kasperi.Ui.Intro.IntroActivity
+import no.kasperi.Ui.komIGang.KomIGangActivity
 import no.kasperi.food4u.R
 
-abstract class SplashActivity : AbstractActivity(R.layout.activity_splash) {
-    override fun init() {
-        Handler().postDelayed({
-            startActivity(Intent(this, IntroActivity::class.java))
-            finish()
-        }, 3000)
+class SplashActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash)
+
+        goToMain()
     }
 
-    override fun running() {}
-
-    override fun stopped() {}
+    private fun goToMain() {
+        Thread.sleep(2000)
+        val i = Intent(this@SplashActivity, KomIGangActivity::class.java)
+        finish()
+        startActivity(i)
     }
+}

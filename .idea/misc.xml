@@ -9,6 +9,7 @@
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1145" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ikon_email.xml" value="0.196" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ikon_hjerte.xml" value="0.2635" />
+        <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ikon_loggut.xml" value="0.12" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ikon_passord.xml" value="0.196" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/ikon_profil.xml" value="0.196" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/drawable/kategori_meny.xml" value="0.353" />
@@ -51,6 +52,7 @@
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_kategori_element_rad.xml" value="0.2965811965811966" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_kategori_forelder_element_rad.xml" value="0.3625" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_kategorier_element_rad.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_komigang_element.xml" value="0.25" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_oppskrift_element_rad.xml" value="0.27109375" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_shimmer_favoritt_element.xml" value="0.25729166666666664" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_shimmer_hjemside_karusell_element.xml" value="0.25833333333333336" />
@@ -61,6 +63,7 @@
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/holder_tomt_query_element.xml" value="0.25" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/last_opp_profilbilde_valg.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/logg_ut_element.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/layout/oppdater_bruker_detaljer.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/menu/app_meny.xml" value="0.3625" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/mipmap-anydpi-v26/food4u_app_logo.xml" value="0.214" />
         <entry key="..\:/Users/kaspe/AndroidStudioProjects/Food4U/app/src/main/res/mipmap-anydpi-v26/food4u_app_logo_round.xml" value="0.214" />

@@ -86,7 +86,9 @@ class MainFragment : AbstractFragment(R.layout.fragment_main) {
         })
 
         viewModel.brukernavn.observe(this, Observer {
-            hjem_header_brukernavn.text = it.capitalize()
+            if (it != null) {
+                hjem_header_brukernavn.text = it.capitalize()
+            }
         })
 
         viewModel.pageTransformer.observe(this, Observer {
