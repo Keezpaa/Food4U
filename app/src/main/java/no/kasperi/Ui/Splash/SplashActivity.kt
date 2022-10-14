@@ -3,6 +3,7 @@ package no.kasperi.Ui.Splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import no.kasperi.Ui.Intro.IntroActivity
 import no.kasperi.Ui.komIGang.KomIGangActivity
 import no.kasperi.food4u.R
 
@@ -17,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun goToMain() {
         Thread.sleep(2000)
-        val i = Intent(this@SplashActivity, KomIGangActivity::class.java)
+        val i = Intent(this@SplashActivity, IntroActivity::class.java)
         finish()
         startActivity(i)
     }
