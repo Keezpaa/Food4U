@@ -41,7 +41,7 @@ class MainFragmentRepository {
     }
 
     fun getMatTypeResultat(matType: String) {
-        ApiKlient.getMealTypeResults(0,10,"", matType, APP_ID, APP_KEY).enqueue(object :
+        ApiKlient.getMatTypeResultat(0,10,"", matType, APP_ID, APP_KEY).enqueue(object :
             Callback<ResponsModel> {
             override fun onResponse(call: Call<ResponsModel>, response: Response<ResponsModel>) {
                 oppskrifter.value = response.body()

@@ -51,7 +51,7 @@ object ApiKlient {
             return api.getCuisineTypeResults(from,to,query, cuisineType, app_id, app_key)
         }
 
-        fun getMealTypeResults(
+        fun getMatTypeResultat(
             from: Int,
             to: Int,
             query: String,

@@ -31,11 +31,13 @@ class KategoriViewModel : ViewModel(), ElementClickListener {
         kategorier.removeObservers(owner)
     }
 
-    override fun onItemClick(view: View) {
+    override fun onElementClick(view: View) {
         when (view.tag) {
             is ForslagsElement -> {
                 callback.onKategoriClick(view.tag as ForslagsElement)
             }
         }
     }
+
+
 }

@@ -10,7 +10,7 @@ abstract class AbstractViewHolder(itemView: View, callback: ElementClickListener
 
     init {
         itemView.setOnClickListener {
-            callback?.onItemClick(it)
+            callback?.onElementClick(it)
         }
     }
 

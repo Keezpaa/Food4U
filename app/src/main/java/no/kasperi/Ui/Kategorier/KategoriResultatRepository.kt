@@ -45,7 +45,7 @@ class KategoriResultatRepository {
     fun getMealTypeResults(mealType: String) {
         apiSide.incrementCounters()
 
-        ApiKlient.getMealTypeResults(apiSide.from, apiSide.to, "", mealType, APP_ID, APP_KEY)
+        ApiKlient.getMatTypeResultat(apiSide.from, apiSide.to, "", mealType, APP_ID, APP_KEY)
             .enqueue(object : Callback<ResponsModel> {
                 override fun onResponse(
                     call: Call<ResponsModel>,

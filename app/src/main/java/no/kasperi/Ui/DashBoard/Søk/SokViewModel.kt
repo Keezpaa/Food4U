@@ -61,7 +61,7 @@ class SokViewModel : ViewModel(), ElementClickListener {
         emptyQueries.removeObservers(owner)
     }
 
-    override fun onItemClick(view: View) {
+    override fun onElementClick(view: View) {
         when (view.tag) {
             is OppskriftMain -> callback.onOppskriftClick(view.tag as OppskriftMain)
             is QueryModel -> queryCallback.onQueryClick(view.tag as QueryModel)

@@ -89,7 +89,7 @@ class MainFragmentViewModel : ViewModel(), ElementClickListener {
         repo.getHjemKategorier()
     }
 
-    override fun onItemClick(view: View) {
+    override fun onElementClick(view: View) {
         when (view.tag) {
             is OppskriftMain ->  callback.onOppskriftClick(view.tag as OppskriftMain)
             is HjemKategoriElement -> kategoriCallback.onHjemKategoriClick(view.tag as HjemKategoriElement)

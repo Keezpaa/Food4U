@@ -1,19 +1,26 @@
 package no.kasperi.Ui.redigerProfil
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_rediger_profil.*
+import kotlinx.android.synthetic.main.oppdater_bruker_detaljer.view.*
+import no.kasperi.Abstraction.AbstractActivity
+import no.kasperi.Ui.Intro.IntroActivity
 import no.kasperi.food4u.R
 
-class RedigerProfilActivity : AbstractActivity(R.layout.activity_edit_profile) {
+ class RedigerProfilActivity : AbstractActivity(R.layout.activity_rediger_profil) {
 
-    private lateinit var viewModel: EditProfileViewModel
+    private lateinit var viewModel: RedigerProfilViewModel
     private lateinit var oldUserEmail: String
 
     override fun init() {
-        viewModel = ViewModelProvider(this).get(EditProfileViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(RedigerProfilViewModel::class.java)
 
         /*
         *
@@ -31,31 +38,31 @@ class RedigerProfilActivity : AbstractActivity(R.layout.activity_edit_profile) {
     override fun running() {
         viewModel.getUserData()
 
-        edit_username_btn.setOnClickListener {
-            viewModel.makeUsernameEditable()
+        rediger_brukernavn_btn.setOnClickListener {
+            viewModel.laBrukernavnRedigeres()
         }
 
-        edit_email_btn.setOnClickListener {
-            viewModel.makeEmailEditable()
+        rediger_email_btn.setOnClickListener {
+            viewModel.laEmailRedigeres()
         }
 
-        edit_phone_btn.setOnClickListener {
-            viewModel.makePhoneEditable()
+        rediger_tlf_btn.setOnClickListener {
+            viewModel.laTelefonRedigeres()
         }
 
-        edit_profile_save_btn.setOnClickListener{
+        rediger_profil_lagre_btn.setOnClickListener{
             //save user input from all fields
-            if (oldUserEmail != edit_profile_email.text.toString()) {
-                val newEmail = edit_profile_email.text.toString()
+            if (oldUserEmail != rediger_profil_email.text.toString()) {
+                val newEmail = rediger_profil_email.text.toString()
                 showLoginDialogue(newEmail)
             }
 
-            viewModel.saveUsernameToDb(edit_profile_username.text.toString())
-            viewModel.savePhoneToDb(edit_profile_phone.text.toString())
+            viewModel.saveUsernameToDb(rediger_profil_brukernavn.text.toString())
+            viewModel.savePhoneToDb(rediger_profil_tlf.text.toString())
 
         }
 
-        edit_profile_logout_btn.setOnClickListener {
+        rediger_profil_loggut_btn.setOnClickListener {
             askForLogout()
         }
 
@@ -63,59 +70,59 @@ class RedigerProfilActivity : AbstractActivity(R.layout.activity_edit_profile) {
     }
 
     override fun stopped() {
-        viewModel.isUsernameEditable.removeObservers(this)
-        viewModel.isEmailEditable.removeObservers(this)
-        viewModel.isPhoneEditable.removeObservers(this)
-        viewModel.userEmail.removeObservers(this)
-        viewModel.username.removeObservers(this)
-        viewModel.phoneNumber.removeObservers(this)
+        viewModel.kanBrukerBliRedigert.removeObservers(this)
+        viewModel.kanEmailBliRedigert.removeObservers(this)
+        viewModel.kanTlfBliRedigert.removeObservers(this)
+        viewModel.brukerEmail.removeObservers(this)
+        viewModel.brukernavn.removeObservers(this)
+        viewModel.telefonNummer.removeObservers(this)
     }
 
     private fun observeData() {
-        viewModel.isUsernameEditable.observe(this, Observer {
+        viewModel.kanBrukerBliRedigert.observe(this, Observer {
             when (it) {
-                true -> edit_profile_username.isEnabled = true
-                false -> edit_profile_username.isEnabled = false
+                true -> rediger_profil_brukernavn.isEnabled = true
+                false -> rediger_profil_brukernavn.isEnabled = false
             }
         })
 
-        viewModel.isEmailEditable.observe(this, Observer {
+        viewModel.kanEmailBliRedigert.observe(this, Observer {
             when (it) {
-                true -> edit_profile_email.isEnabled = true
-                false -> edit_profile_email.isEnabled = false
+                true -> rediger_profil_email.isEnabled = true
+                false -> rediger_profil_email.isEnabled = false
             }
         })
 
-        viewModel.isPhoneEditable.observe(this, Observer {
+        viewModel.kanTlfBliRedigert.observe(this, Observer {
             when (it) {
-                true -> edit_profile_phone.isEnabled = true
-                false -> edit_profile_phone.isEnabled = false
+                true -> rediger_profil_tlf.isEnabled = true
+                false -> rediger_profil_tlf.isEnabled = false
             }
         })
 
-        viewModel.userEmail.observe(this, Observer {
+        viewModel.brukerEmail.observe(this, Observer {
             oldUserEmail = it
-            it?.let { edit_profile_email.setText(it) }
+            it?.let { rediger_profil_email.setText(it) }
         })
 
-        viewModel.username.observe(this, Observer {
-            it?.let { edit_profile_username.setText(it) }
+        viewModel.brukernavn.observe(this, Observer {
+            it?.let { rediger_profil_brukernavn.setText(it) }
         })
 
-        viewModel.phoneNumber.observe(this, Observer {
-            it?.let { edit_profile_phone.setText(it) }
+        viewModel.telefonNummer.observe(this, Observer {
+            it?.let { rediger_profil_tlf.setText(it) }
         })
     }
 
     fun showLoginDialogue(newEmail: String) {
         val dialog =
-            LayoutInflater.from(this).inflate(R.layout.view_authorize_user_credentials, null)
+            LayoutInflater.from(this).inflate(R.layout.oppdater_bruker_detaljer, null)
         val dialogBuilder = AlertDialog.Builder(this)
             .setView(dialog).show()
 
-        dialog.edit_profile_save_data_btn.setOnClickListener {
-            val userEmail = dialog.user_email.text.toString()
-            val userPassword = dialog.user_password_field.text.toString()
+        dialog.rediger_profil_lagre_data_btn.setOnClickListener {
+            val userEmail = dialog.bruker_email.text.toString()
+            val userPassword = dialog.bruker_passord_felt.text.toString()
             viewModel.saveEmailToDb(userEmail, userPassword, newEmail)
             dialogBuilder.dismiss()
         }
@@ -123,17 +130,20 @@ class RedigerProfilActivity : AbstractActivity(R.layout.activity_edit_profile) {
 
     private fun askForLogout() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Logout")
-        builder.setMessage("Do you want to log out?")
+        builder.setTitle("Logg ut")
+        builder.setMessage("Er du sikker på at du vil logge ut?")
 
-        builder.setPositiveButton("YES") { dialog, which ->
+        builder.setPositiveButton("Ja") { dialog, which ->
             viewModel.logoutUser()
             startActivity(Intent(this, IntroActivity::class.java))
         }
 
-        builder.setNegativeButton("CANCEL") { dialog, which ->
+        builder.setNegativeButton("Avbryt") { dialog, which ->
             dialog.dismiss()
         }
         builder.show()
     }
+     override fun formatNumber(kalorier: Double): String? {
+         TODO("Not yet implemented")
+     }
 }

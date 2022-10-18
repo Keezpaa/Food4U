@@ -47,25 +47,25 @@ class RegistrerViewModel : ViewModel() {
         passwordConfigField: TextInputEditText
     ): Boolean {
         if (emailField.text.toString().isEmpty()) {
-            emailField.error = "Please enter your e-mail"
+            emailField.error = "Vennligst fyll inn din e-mail"
             emailField.requestFocus()
             return false
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(emailField.text.toString()).matches()) {
-            emailField.error = "Please enter a valid e-mail address"
+            emailField.error = "Vennligst tast inn en gyldig e-mail addresse"
             emailField.requestFocus()
             return false
         }
 
         if (passwordField.text.toString().isEmpty()) {
-            passwordField.error = "Please enter your password"
+            passwordField.error = "Fyll inn ditt passord"
             passwordField.requestFocus()
             return false
         }
 
         if (passwordConfigField.text.toString().isEmpty()) {
-            passwordConfigField.error = "Please confirm your password"
+            passwordConfigField.error = "Bekreft ditt passord"
             passwordConfigField.requestFocus()
             return false
         }

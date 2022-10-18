@@ -46,12 +46,13 @@
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="204dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="loading_spinner.json"
+        app:lottie_fileName="walking_broccoli.json"
         app:lottie_loop="true" />
 
 

@@ -37,7 +37,7 @@ class ProfilViewModel : ViewModel(), ElementClickListener {
         CoroutineScope(Dispatchers.IO).launch { repo.getUserFavorites() }
     }
 
-    override fun onItemClick(view: View) {
+    override fun onElementClick(view: View) {
         when (view.tag) {
             is OppskriftMain -> callback.onOppskriftClick(view.tag as OppskriftMain)
         }
