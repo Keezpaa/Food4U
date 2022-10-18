@@ -4,5 +4,5 @@ import android.view.View
 
 interface ElementClickListener {
 
-    fun onItemClick(view: View)
+    fun onElementClick(view: View)
 }
